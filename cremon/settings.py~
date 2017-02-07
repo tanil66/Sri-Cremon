@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 import socket
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -36,8 +38,11 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
-    'myproject'
+    'myproject',
+    'registration',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -93,11 +98,11 @@ if socket.gethostname() == 'vishnu':
 }
 elif socket.gethostname() == 'wf-103-44-220-147.webfaction.com':
     DEBUG = TEMPLATE_DEBUG = False
-    ALLOWED_HOSTS = ["www.scabs.in", "scabs.in"]    
+    ALLOWED_HOSTS = ["www.sricremon.in", "sricremon.in", "www.sricremon.com", "sricremon.com"]    
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'packers',                      # Or path to database file if using sqlite3.
+        'NAME': 'cremon',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'rt8055',
         'PASSWORD': 'Starthere66%',
@@ -123,6 +128,15 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_URL = '192.168.0.24:8000'
+
+SITE_ID = '1'
+
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
+ACCOUNT_ACTIVATION_DAYS = 7 
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
@@ -142,3 +156,50 @@ CSRF_COOKIE_DOMAIN = None
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+CSRF_COOKIE_DOMAIN = None
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.JSONSerializer'
+ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
+REGISTRATION_AUTO_LOGIN = False # Automatically log the user in.
+LOGIN_REDIRECT_URL = '/'
+
+STRIPE_SECRET_KEY = "sk_test_tXCtSORPdz4nrozcoOsiCy2A"
+STRIPE_PUBLISHABLE_KEY = "pk_test_giqz4Y9dhjdg6QtIUbuOBahj"
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'handlers': {
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
+
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'kalamemailbox'
+EMAIL_HOST_PASSWORD = 'khari123'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'contact@kalamdreamhome.com'
+SERVER_EMAIL = 'contact@kalamdreamhome.com'
+

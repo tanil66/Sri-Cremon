@@ -36,7 +36,7 @@ def login_view(request):
 	return render(request, "form.html", context)
 
 
-def registration_view(request):
+'''def registration_view(request):
 	form = RegistrationForm(request.POST or None)
 	btn = "Join"
 	if form.is_valid():
@@ -57,7 +57,7 @@ def registration_view(request):
 		 "form": form,
 		 "submit_btn": btn,
 	}
-	return render(request, "form.html", context)
+	return render(request, "form.html", context)'''
 
 
 SHA1_RE = re.compile('^[a-f0-9]{40}$')

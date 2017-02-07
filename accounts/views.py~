@@ -118,22 +118,5 @@ def add_user_address(request):
 		{"form": form,
 		"submit_btn": submit_btn,
 		"form_title": form_title,
-		})	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		})
 

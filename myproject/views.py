@@ -46,9 +46,6 @@ def about(request):
     context_dict = {}
     return render(request, 'about.html', context_dict)
 
-def contact(request):
-    context_dict = {}
-    return render(request, 'contactus.html', context_dict)
 	
 def admission(request):
     context_dict = {}
@@ -110,7 +107,7 @@ def program(request):
     return render(request, 'programmes.html', context_dict)
 
 
-def contact_form(request):
+def contact(request):
     context = RequestContext(request)
     done = False
     if request.method == "POST":
@@ -124,7 +121,7 @@ def contact_form(request):
             print contact_form.errors
     else:
         contact_form = ContactForm()
-    return render_to_response('contact.html',
+    return render_to_response('contactus.html',
      {'contact_form': contact_form,
      'done': done}, context)
 

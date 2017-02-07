@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
 import socket
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -36,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'myproject',
     'registration',
@@ -77,7 +80,7 @@ WSGI_APPLICATION = 'cremon.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-if socket.gethostname() == 'nithin':
+if socket.gethostname() == 'vishnu':
     DEBUG = TEMPLATE_DEBUG = True
     DATABASES = {
     'default': {
@@ -85,7 +88,7 @@ if socket.gethostname() == 'nithin':
         'NAME': 'cremon',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': 'root',
-        'PASSWORD': 'nithin',
+        'PASSWORD': 'root',
         'HOST': '127.0.0.1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '3306',
 	'OPTIONS': {
@@ -125,7 +128,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-SITE_URL = '192.168.0.24:8000'
+SITE_URL = "192.168.1.3:5000"
+
+SITE_ID = '1'
 
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
