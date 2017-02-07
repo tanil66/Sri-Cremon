@@ -1,0 +1,12 @@
+    {% extends 'base.html' %}
+ {% load i18n %}
+
+
+{% load static %}
+{% block title %} Kalam Dream Home {% endblock %}
+
+{% block content %}
+
+<p>{% trans "Account activation failed" %}</p>
+
+{% endblock %}

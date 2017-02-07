@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+ {% load i18n %}
+
+
+{% load static %}
+{% block title %} SRI CREMON LIFE SCHOOL {% endblock %}
+
+         {% block body_block %}
+		 <br><br>
+
+<div class="row">
+<div class="module form-module"><br><br><br>
+
+
+                            
+<div class="form">
+<form class = "form-horizontal loginform" role="form" method="post" action=".">
+                                           {% csrf_token %}
+						{{form.errors}}
+
+<h2>Register for an account</h2>
+<form>
+  <input required="required" id="id_username" maxlength="30" name="username" type="text" placeholder="Username">
+
+  <input required="required" id="id_email" name="email" type="email" placeholder="Email">
+    <input required="required" id="id_password1" name="password1" type="password" placeholder="Password">
+
+    <input required="required" id="id_password2" name="password2" type="password" placeholder="ReEnter Password">
+				<input type="submit" value="submit" class="submit-login">
+
+</form>
+
+  </div>
+</div>
+</div>
+<style>
+.form-module {
+    position: relative;
+    background: #ffffff;
+    max-width: 322px;
+    width: 100%;
+    border-top: 5px solid #fa6f57;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.97);
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.form-module .form:nth-child(2) {
+    display: block;
+}
+.form-module .form {
+    
+    padding: 40px;
+	padding-top: 0px;
+	padding-bottom: 1px;
+}
+.form-module h2 {
+    margin: 0 0 20px;
+    color: #fa6f57;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+.form-module input {
+    outline: none;
+    display: block;
+    width: 100%;
+    border: 1px solid #7e7b7b;
+    margin: 0 0 20px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    font-wieght: 400;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+form input.submit-login {
+    cursor: pointer;
+    background: #fa6f57;
+    width: 100%;
+    border: 0;
+    padding: 10px 15px;
+    color: #ffffff;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+.form-module .cta {
+    background: #f2f2f2;
+    width: 100%;
+    padding: 15px 40px;
+    box-sizing: border-box;
+    color: #005689;
+    font-size: 12px;
+    text-align: center;
+}
+
+</style>
+{% endblock %}

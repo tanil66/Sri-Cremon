@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %} SRI CREMON LIFE SCHOOL  {% endblock %}
+
+{% block body_block %}
+<style>
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  
+  margin: 5px;
+}
+
+.button span {
+  
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+	<div id="content">
+
+    	
+
+        <div class="wrap">
+
+            <div class="c-8">
+
+            
+
+              <div class="page">
+<section class="sectionPadding testimonials" style="border:none; margin-top:-4.5rem; color:black;" >
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-sm-offset-2">
+					<div class="sectionTitle">
+							<h2>Cremon Montessori House Of Childrens</h2>
+							<div class="underline">
+								<span class="line" ></span>
+							</div><!--end underline -->
+						</div><!--end sectionTitle -->
+			</div>
+	</div>
+                  <h1>Photos</h1>
+                  <div>
+				  
+									<a href="#"><button class="button"><span>Excursion </span></button></a>
+									<a href="#"><button class="button"><span>Drawing </span></button></a>
+									<a href="#"><button class="button"><span>Courses </span></button></a>
+									<a href="#"><button class="button"><span>Events </span></button></a>
+								    <a href="#"><button class="button"><span>Others </span></button></a>
+									
+								
+								</div>
+	         </div>
+	</div>
+	</div>
+	</div>
+	{% endblock %}

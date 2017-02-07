@@ -1,0 +1,150 @@
+from django.shortcuts import render
+
+from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
+from django.shortcuts import render_to_response, render
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
+from myproject.models import *
+from myproject.forms import *
+from django.db.models import Q
+from django.views.decorators.csrf import csrf_protect
+import json
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import RequestContext
+from django.shortcuts import render_to_response
+from django.shortcuts import redirect
+from smtplib import SMTP
+from django.views.decorators.csrf import csrf_exempt
+
+# Create your views here.
+
+def index(request):
+    context_dict = {}
+    return render(request, 'home.html', context_dict)
+
+def newdesign(request):
+    context_dict = {}
+    return render(request, 'newdesign.html', context_dict)
+
+
+def gallery(request):
+    context_dict = {}
+    return render(request, 'gallery.html', context_dict)
+
+def videos(request):
+    context_dict = {}
+    return render(request, 'videos.html', context_dict)
+
+def photos(request):
+    context_dict = {}
+    return render(request, 'photos.html', context_dict)
+
+def about(request):
+    context_dict = {}
+    return render(request, 'about.html', context_dict)
+
+def contact(request):
+    context_dict = {}
+    return render(request, 'contactus.html', context_dict)
+	
+def admission(request):
+    context_dict = {}
+    return render(request, 'admissions.html', context_dict)
+
+def holiday(request):
+    context_dict = {}
+    return render(request, 'holidays.html', context_dict)
+	
+def events(request):
+    context_dict = {}
+    return render(request, 'events.html', context_dict)
+
+def information(request):
+    context_dict = {}
+    return render(request, 'information.html', context_dict)
+
+def testmonials(request):
+    context_dict = {}
+    return render(request, 'testmonials.html', context_dict)
+
+def images(request):
+    context_dict = {}
+    return render(request, 'images.html', context_dict)
+
+def highlights(request):
+    context_dict = {}
+    return render(request, 'highlights.html', context_dict)
+
+
+#def login(request):
+    #context_dict = {}
+    #return render(request, 'registration/login.html', context_dict)
+
+#def registration_form(request):
+    #context_dict = {}
+    #return render(request, 'registration/registration_form.html', context_dict)
+
+def management(request):
+    context_dict = {}
+    return render(request, 'management.html', context_dict)
+
+def branches(request):
+    context_dict = {}
+    return render(request, 'branches.html', context_dict)
+
+def calendar(request):
+    context_dict = {}
+    return render(request, 'calendar.html', context_dict)
+	
+	
+	
+def resource(request):
+    context_dict = {}
+    return render(request, 'parentresource.html', context_dict)
+	
+def program(request):
+    context_dict = {}
+    return render(request, 'programmes.html', context_dict)
+
+
+def contact_form(request):
+    context = RequestContext(request)
+    done = False
+    if request.method == "POST":
+        contact_form = ContactForm(data=request.POST)
+        #print "request post : ", request.POST
+        if contact_form.is_valid():
+            contact = contact_form.save()
+            done = True
+        else:
+            "sorry "
+            print contact_form.errors
+    else:
+        contact_form = ContactForm()
+    return render_to_response('contact.html',
+     {'contact_form': contact_form,
+     'done': done}, context)
+
+@csrf_exempt
+def sendmsg(request):
+    context = RequestContext(request)
+    from_addr = "contact@kalamdreamhome.com"
+    name2 = request.POST['name2']
+    to_addrs = "contact@kalamdreamhome.com"
+    msg = "Dear Admin, \n Below are the details of the enquiry. \n " + str(request.POST['message2']) + "\n Email: ", str(request.POST['email2']) + "\n Thank You"
+    fmsg = 'Subject: %s\n\n%s' % ("New Enquiry for Delevere", msg)
+    s = SMTP()
+    s.connect('smtp.webfaction.com')
+    s.login('kalamemailbox','khari123')
+    s.sendmail(from_addr, to_addrs, fmsg)
+    
+    thanks = "thadfffnks"
+    
+
+    return HttpResponse(json.dumps(thanks))
+
+
+	

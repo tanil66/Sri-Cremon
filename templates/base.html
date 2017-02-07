@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>SRI CREMON LIFE SCHOOL</title>
+	<!-- ========== CSS INCLUDES ========== -->
+	<link rel="stylesheet" href="/static/cremon-static/assets/css/master.css">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+<!-- .dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+ -->
+</style>
+
+</head>
+<body>
+
+	<!-- ================================ -->
+	<!-- ========== HEADER ========== -->
+	<!-- ================================ -->
+	<header id="header" class="header1" >
+		
+		<!-- Begin Top-Header -->
+		<div id="topContainer">
+			<div class="container">
+					<div class="topContent">
+						<ul class="social-icons">
+								<li><a href="https://facebook.com/sricremon" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="https://twitter.com/sricremon"  target="_blank"><i class="fa fa-twitter"></i></a></li>
+							
+								<li><a href="#" style="margin-left: 2px;"><i class="fa fa-google-plus"></i></a></li>
+							</ul><!--end social-icons -->
+											
+							<div class="contact-details">
+								<ul>
+									<li>
+										<span class="fa fa-clock-o" ></span>
+										Mon - Fri : 9:00am - 11:00pm	
+									</li>
+													
+									<li>
+										<span class="fa fa-phone"></span><a href="skype:+919985713178">
+											 +91 - 9985713178</a>
+									</li>
+													
+									<li>
+										<span class="fa fa-envelope"></span>
+										<a href="mailto:contact@sricremon.com?Subject=Hello%20again" target="_blank">contact@sricremon.com</a>
+									</li>
+									{% if user.is_authenticated %}
+								<li><a href="/profile/">Account</a></li>
+								<li><a href="/accounts/logout/">Logout</a></li>
+								{% else %}
+    							<!--<li><a href="/accounts/register/"><span class="fa fa-user"></span>Register</a></li>-->
+    							<li><a href="/accounts/login/"><span class="fa fa-sign-in"></span>Login</a></li>
+								{% endif %}
+									<!-- <li>
+										<span class="fa fa-map-marker"></span>
+										55-14-89,HB Colony Rd,Visakhapatnam-530013
+									</li> -->
+								</ul>
+							</div><!--end contact-details --></div>
+					<a href="#" class="headerButton"><i class="fa fa-angle-down"></i></a>
+				</div><!--end container -->
+			</div><!--end topContainer -->
+		<!--end Top-Header -->
+
+			<!-- Begin Nav -->
+			<nav class="navbar clearfix">
+			  <div class="container">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand "  href="/">
+			      	<img src="/static/cremon-static/assets/img/header/cremon-logo.png" class="fadeInL-Big" alt="LOGO" style="visibility: visible;margin-top: -30px;">
+			      </a>
+			    </div>
+	
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse fade " id="bs-example-navbar-collapse-1">
+					<nav class="mainMenu fadeUp-menu" style="margin-left: -105px; margin-top: -20px;">
+						<ul>
+							<li>
+								<a href="/">
+									<img src="/static/cremon-static/assets/img/Icons/home.png" alt="home">
+										Home <span></span> 
+								</a>
+							</li>
+							<li>
+								<a href="management">
+									<img src="/static/cremon-static/assets/img/Icons/classes.png" alt="home">
+									About Sri Cremon
+									
+								</a>
+								<ul>
+									<li><a href="about"><strong>About Management</strong></a></li>
+									<li><a href="branches"><strong>Branches</strong> </a></li>
+								    <li><a href="highlights"><strong>Sri Cremon Highlights</strong></a></li>
+									<li><a href="testmonials"><strong>Testimonials</strong></a></li>
+									
+								</ul>
+								
+							</li>
+							<li>
+								<a href="information">
+									<img src="/static/cremon-static/assets/img/Icons/teachers.png" alt="home">
+									Event Calendar <span></span> 
+								</a>
+								<ul>
+									<!--<li><a href="program">Programmes</a></li>-->
+									<li><a href="holiday"><strong>List of Holidays</strong></a></li>
+								    <li><a href="calendar"><strong>Events</strong></a></li>
+									<li><a href="admission"><strong>Admissions</strong></a></li>
+								</ul>
+							</li>
+							
+							<li>
+							<a href="gallery" >
+							<img src="/static/cremon-static/assets/img/Icons/pages.png" alt="home">
+                            <strong>Gallery</strong></a>
+                           
+                                      <ul>
+									<li class="dropdown-submenu"><a href="videos"class="dropdown-toggle" data-toggle="dropdown"><strong>Videos</strong></a>
+									
+                                        
+                                            <ul class="dropdown-menu">
+                                                <li><a href="images"><strong>All Excursion</strong></a></li>
+                                                <li><a href="images"><strong>Events</strong></a></li>
+                                                <li><a href="images"><strong>Others</strong></a></li>
+                                                
+                                            </ul>
+                                        </li>
+										
+										<li class="dropdown-submenu">
+                                            <a href="photos" class="dropdown-toggle" data-toggle="dropdown">Photos</a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="images"><strong>Excursion</strong></a></li>
+                                                <li><a href="images"><strong>Drawing</strong></a></li>
+                                                <li><a href="images"><strong>Courses</strong></a></li>
+												<li><a href="images"><strong>Events</strong></a></li>
+                                                <li><a href="images"><strong>Others</strong></a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                
+                            
+                        </li>
+							
+							
+							
+							
+							
+							<li>
+								<a href="resource">
+									<img src="/static/cremon-static/assets/img/Icons/home.png" alt="home">
+									Parent Resource 
+								</a>
+							</li>
+							
+							
+							<li>
+								<a href="#">
+									<img src="/static/cremon-static/assets/img/Icons/enroll.png" alt="home">
+									Enroll						 
+								</a>
+								<ul>
+									<li><a href="images"><strong>Infant program</strong></a></li>
+									<li><a href="images"><strong>Mother Toddler program</strong> </a></li>
+								    <li><a href="images"><strong>Pre-Primary Program</strong></a></li>
+									<li><a href="images"><strong>Summer Camps</strong></a></li>
+									<li><a href="images"><strong>After School Program </strong></a></li>
+								    <li><a href="images"><strong>Parenting workshop</strong></a></li>
+									<li><a href="images"><strong>Hobby Classes</strong></a></li>
+								</ul>
+								
+								
+							</li>
+							
+							 
+							 <li>
+								<a href="contact">
+									<img src="/static/cremon-static/assets/img/Icons/blog.png" alt="home">
+									Contact 
+									
+								</a>
+							</li>  
+						</ul>
+					</nav><!--end nav -->
+			    </div><!-- /navbar-collapse -->
+			  </div><!-- /container-->
+			</nav><!--end navbar -->
+	</header>
+
+
+{% block body_block %}
+
+{% endblock %} 
+
+
+	
+
+
+
+
+
+
+
+
+
+	<!-- ================================================== -->
+	<!-- =============== START JQUERY SCRIPTS ================ -->
+	<!-- ================================================== -->
+
+	<script src="/static/cremon-static/assets/js/jquery.js"></script>
+	<script src="/static/cremon-static/assets/js/bootstrap.min.js"></script>
+	<script src="/static/cremon-static/assets/js/plugins.js"></script>
+	<script src="/static/cremon-static/assets/js/main.js"></script>
+
+	<!--[if lte IE 9 ]>
+		<script src="/static/cremon-static/assets/js/placeholder.js"></script>
+		<script>
+			jQuery(function() {
+				jQuery('input, textarea').placeholder();
+			});
+		</script>
+	<![endif]-->
+	
+	<!-- ================================================== -->
+	<!-- =============== END JQUERY SCRIPTS ================ -->
+	<!-- ================================================== -->
+	
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+	{% extends "base.html" %}
+
+{% block title %} SRI CREMON LIFE SCHOOL  {% endblock %}
+
+{% block body_block %}
+
+ <section class="sectionPadding teachers" style="background-image:url(/static/cremon-static/assets/img/Images/geometry2.png);" > 
+		<div class="container">
+			<div class="row">
+			
+							<h2>Testimonial</h2>
+							<div class="underline">
+								<span class="line"></span>
+							</div><br>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<ul>
+				<li>
+					Lorem ipsum dolor sit amet
+				</li>
+				<li>
+					Consectetur adipiscing elit
+				</li>
+				<li>
+					Integer molestie lorem at massa
+				</li>
+				<li>
+					Facilisis in pretium nisl aliquet
+				</li>
+				<li>
+					Nulla volutpat aliquam velit
+				</li>
+				<li>
+					Faucibus porta lacus fringilla vel
+				</li>
+				<li>
+					Aenean sit amet erat nunc
+				</li>
+				<li>
+					Eget porttitor lorem
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</div>
+</div>
+</section>
+{% endblock %}

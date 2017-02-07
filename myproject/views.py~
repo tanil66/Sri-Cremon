@@ -1,0 +1,50 @@
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.template import RequestContext
+from django.shortcuts import render_to_response, render
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.models import User
+from myproject.models import *
+from django.db.models import Q
+
+# Create your views here.
+
+def index(request):
+    context_dict = {}
+    return render(request, 'cremon/home.html', context_dict)
+
+def gallery(request):
+    context_dict = {}
+    return render(request, 'cremon/gallery.html', context_dict)
+
+def about(request):
+    context_dict = {}
+    return render(request, 'cremon/about.html', context_dict)
+
+def contact(request):
+    context_dict = {}
+    return render(request, 'cremon/contactus.html', context_dict)
+	
+def admission(request):
+    context_dict = {}
+    return render(request, 'cremon/admissions.html', context_dict)
+
+def holiday(request):
+    context_dict = {}
+    return render(request, 'cremon/holidays.html', context_dict)
+	
+def faq(request):
+    context_dict = {}
+    return render(request, 'cremon/faq.html', context_dict)
+	
+	
+	
+def resource(request):
+    context_dict = {}
+    return render(request, 'cremon/parentresource.html', context_dict)
+	
+def program(request):
+    context_dict = {}
+    return render(request, 'cremon/programmes.html', context_dict)
+	
